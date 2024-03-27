@@ -1,13 +1,13 @@
 let tareas = [
-    { nombre: "Tarea 1", completada: false, hora: obtenerHora() },
-    { nombre: "Tarea 2", completada: false, hora: obtenerHora() }
+    { nombre: "Tarea 1", completada: false, hora: new Date().getTime(), horaTachado: null },
+    { nombre: "Tarea 2", completada: false, hora: new Date().getTime(), horaTachado: null }
 ];
-
+console.log(tareas)
 function agregarTarea() {
     const nuevaTareaInput = document.getElementById('nuevaTareaInput');
     const tarea = nuevaTareaInput.value;
     if (tarea != '') {
-        tareas.push({ nombre: tarea, completada: false, hora: obtenerHora() });
+        tareas.push({ nombre: tarea, completada: false, hora: new Date(),horaTachado:null });
         nuevaTareaInput.value = '';
         actualizarListaTareas();
     }
@@ -31,10 +31,12 @@ function actualizarListaTareas() {
         const label = document.createElement('label');
         label.textContent = tarea.nombre;
         label.style.textDecoration = tarea.completada ? 'line-through' : 'none';
+        tarea.horaTachado = new Date().getTime();
         tareaElement.appendChild(label);
+        console.log(tareas)
         
         const horaLabel = document.createElement('label');
-        horaLabel.textContent = tarea.hora;
+        horaLabel.textContent = tarea.hora; 
         tareaElement.appendChild(horaLabel);
         
         const botonEliminar = document.createElement('button');
@@ -54,16 +56,14 @@ function eliminarTarea(index) {
 }
 
 function tareaMasRapida() {
-    const tareaMasRapida = tareas.find(tarea => tarea.completada);
-    if (tareaMasRapida) {
-        alert(`La tarea más rápida en completarse es: ${tareaMasRapida.nombre}`);
-    } else {
-        alert('No hay tareas completadas aún.');
-    }
-}//DDDD
-
-function obtenerHora() {
-    return new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+    let TareaMasRapida = tareas[0];
+    tareas.forEach(t =>  {
+        if(t.horaTachado-t.hora<tareaMasRapida.horaTachado-tareaMasRapida.hora)
+        tareaMasRapida=t;
+    });
+    alert(`La tarea mas rapida es: ${TareaMasRapida.nombre}`);
 }
+
+
 
 actualizarListaTareas();
