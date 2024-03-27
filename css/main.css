@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+.padre{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.hijo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 6rem;
+    background-color: rgb(188, 253, 154);
+    box-shadow: 3px 3px 3px 3px rgb(124, 124, 124);
+    border-radius: 8px;
+}
+
+.titulo{
+    margin-bottom: 5%;
+    font-weight: bold;
+    font-size: 40px;
+    font-family:sans-serif;
+}
+
+.nuevaLista{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(179, 179, 179);
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+
+.ul-lista{
+    margin: .5rem;
+    font-size: 30px;
+    width: 100%;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.li-listas{
+    background-color: gray;
+}
+
+.ul-lista li {
+    background-color: #fefefe; 
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+
+.ul-lista li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.ul-lista li label {
+    flex-grow: 1; 
+}
+.div-input{
+    background-color: rgb(179, 179, 179);
+    display: flex;
+    align-items: center;
+    border: none;
+}
+.btn{
+    background-color: black;
+    border: none;
+    color: white;
+    padding: .7rem;
+    padding-inline:3rem;
+    margin: 1rem;
+    border-radius: 6px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+.img{
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+}
+
+
+
+
+.eliminar-btn {
+    background-image: url('../img/deleteicon.png');
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+}
