@@ -18,7 +18,7 @@ function actualizarListaTareas() {
     listaTareas.innerHTML = '';
     tareas.forEach((tarea, index) => {
         const tareaElement = document.createElement('li');
-        
+
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.checked = tarea.completada;
@@ -27,23 +27,23 @@ function actualizarListaTareas() {
             actualizarListaTareas();
         });
         tareaElement.appendChild(checkbox);
-        
+
         const label = document.createElement('label');
         label.textContent = tarea.nombre;
         label.style.textDecoration = tarea.completada ? 'line-through' : 'none';
         tareaElement.appendChild(label);
-        
+
         const horaLabel = document.createElement('label');
         horaLabel.textContent = tarea.hora;
         tareaElement.appendChild(horaLabel);
-        
+
         const botonEliminar = document.createElement('button');
         botonEliminar.classList.add('eliminar-btn');
         botonEliminar.addEventListener('click', () => {
             eliminarTarea(index);
         });
         tareaElement.appendChild(botonEliminar);
-        
+
         listaTareas.appendChild(tareaElement);
     });
 }
@@ -60,10 +60,13 @@ function tareaMasRapida() {
     } else {
         alert('No hay tareas completadas aún.');
     }
-}//DDDD
+}
 
 function obtenerHora() {
     return new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
 }
 
 actualizarListaTareas();
+
+
+
