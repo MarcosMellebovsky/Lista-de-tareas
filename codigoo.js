@@ -12,6 +12,7 @@ function agregarTarea() {
         actualizarListaTareas();
     }
 }
+//A
 
 function actualizarListaTareas() {
     const listaTareas = document.getElementById('listaTareas');
