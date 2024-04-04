@@ -36,7 +36,9 @@ function actualizarListaTareas() {
         tareaElement.appendChild(label);
 
         const horaLabel = document.createElement('label');
-        horaLabel.textContent = tarea.fechaIngreso;
+        const fecha =`${new Date(tarea.fechaIngreso).toLocaleDateString()}` ;
+        
+        horaLabel.textContent = fecha;
         tareaElement.appendChild(horaLabel);
 
         const botonEliminar = document.createElement('button');
