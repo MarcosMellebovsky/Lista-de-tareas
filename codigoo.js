@@ -12,7 +12,7 @@ function agregarTarea() {
         actualizarListaTareas();
     }
 }
-//A
+
 
 function actualizarListaTareas() {
     const listaTareas = document.getElementById('listaTareas');
@@ -36,7 +36,7 @@ function actualizarListaTareas() {
         tareaElement.appendChild(label);
 
         const horaLabel = document.createElement('label');
-        horaLabel.textContent = tarea.hora;
+        horaLabel.textContent = tarea.fechaIngreso;
         tareaElement.appendChild(horaLabel);
 
         const botonEliminar = document.createElement('button');
@@ -66,6 +66,7 @@ document.getElementById("tareaMasRapida").onclick=()=>{
     });
     alert(`La tarea hecha más rápida fue: ${tareaR.nombre}`)
 }
+
 
 
 actualizarListaTareas();
